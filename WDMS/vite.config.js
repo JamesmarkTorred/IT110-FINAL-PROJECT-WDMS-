@@ -17,8 +17,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    emptyOutDir: true
-    // ✅ Removed rollupOptions
+    emptyOutDir: true, // Fixed missing comma
   },
   optimizeDeps: {
     include: [
