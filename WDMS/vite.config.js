@@ -4,8 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  root: '.', // Explicit root directory
-  base: '/', // Ensure base URL is correct
+  root: '.', // Root directory
+  base: '/', // Base URL
   plugins: [
     vue(),
     tailwindcss(),
@@ -16,13 +16,9 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist', // Must match Vercel's output directory
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './index.html' // Explicit entry point
-      }
-    }
+    outDir: 'dist',
+    emptyOutDir: true
+    // ✅ Removed rollupOptions
   },
   optimizeDeps: {
     include: [
